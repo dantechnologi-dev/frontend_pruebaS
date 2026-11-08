@@ -1,0 +1,192 @@
+
+/* CONTENEDOR PRINCIPAL */
+.producto-container {
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+/* TARJETA */
+.producto-card {
+  width: 100%;
+  max-width: 540px;
+  padding: 28px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.10);
+  box-sizing: border-box;
+}
+
+/* ENCABEZADO */
+.producto-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  background-color: #d8f5e9;
+  border-radius: 4px;
+}
+
+.header-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #19a66d;
+  color: white;
+  border-radius: 4px;
+  font-size: 21px;
+}
+
+.producto-header h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* DESCRIPCIÓN */
+.producto-descripcion {
+  margin-bottom: 22px;
+  font-size: 12px;
+  color: #777777;
+}
+
+/* GRUPOS DEL FORMULARIO */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.form-group label span {
+  color: #e53935;
+}
+
+/* INPUTS Y SELECTS */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-group input,
+.form-group select {
+  height: 38px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 75px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #19a66d;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999999;
+}
+
+/* DOS COLUMNAS */
+.form-row {
+  display: flex;
+  gap: 14px;
+}
+
+/* BOTONES */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 27px;
+}
+
+.form-buttons button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* CANCELAR */
+.btn-cancelar {
+  background-color: #e9ecef;
+  color: #444444;
+}
+
+.btn-cancelar:hover {
+  background-color: #d6d9dc;
+}
+
+/* GUARDAR */
+.btn-guardar {
+  background-color: #19a66d;
+  color: #ffffff;
+}
+
+.btn-guardar:hover {
+  background-color: #148b5b;
+}
+
+.btn-guardar:disabled {
+  background-color: #a5cbbb;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+
+  .producto-card {
+    padding: 20px 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .producto-header h2 {
+    font-size: 16px;
+  }
+
+  .form-buttons {
+    flex-direction: column-reverse;
+  }
+
+  .form-buttons button {
+    width: 100%;
+  }
+
+}
