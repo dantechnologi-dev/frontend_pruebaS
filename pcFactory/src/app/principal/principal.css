@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-page-container {
+  max-width: 1240px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   ESTILOS DEL CARRUSEL DE COMPONENTES
+   ========================================== */
+.carousel-section {
+  margin-bottom: 50px;
+}
+
+.carousel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.carousel-title-row h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.title-underline {
+  height: 3px;
+  width: 140px;
+  background-color: #00b050;
+  border-radius: 2px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botones de navegación lateral */
+.nav-arrow {
+  position: absolute;
+  z-index: 10;
+  width: 32px;
+  height: 48px;
+  background-color: #94a3b8;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav-arrow:hover {
+  background-color: #64748b;
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.prev-btn {
+  left: -16px;
+}
+
+.next-btn {
+  right: -16px;
+}
+
+/* Contenedor deslizante de tarjetas */
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 4px;
+  scrollbar-width: none; /* Ocultar barra en Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Ocultar barra en Chrome/Safari */
+}
+
+/* Tarjeta de Producto */
+.product-card {
+  flex: 0 0 230px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Área de imagen */
+.product-image-box {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.product-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Información del producto */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-brand {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.35;
+  height: 52px; /* Limita alto para alinear tarjetas */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+/* Badges y precios */
+.discount-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.discount-badge {
+  background-color: #4cd964;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.old-price {
+  font-size: 12px;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.price-row {
+  margin-bottom: 14px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111111;
+}
+
+/* Botón agregar al carro */
+.btn-add-cart {
+  width: 100%;
+  height: 40px;
+  background-color: #334155;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.btn-add-cart:hover {
+  background-color: #1e293b;
+}
+
+.btn-add-cart svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================
+   ESTILOS DE NUESTRA HISTORIA
+   ========================================== */
+.history-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.history-text-col {
+  flex: 1;
+}
+
+.title-banner {
+  background-color: #d7f5e8;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 25px 10px 10px;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.title-icon {
+  background-color: #16aa68;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #ffffff;
+}
+
+.title-banner h2 {
+  color: #111111;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.history-text-col p {
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.history-text-col p strong {
+  font-weight: 700;
+  color: #000000;
+}
+
+.welcome-text {
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111111;
+  line-height: 1.5;
+}
+
+.history-metrics-card {
+  flex: 1;
+  background-color: #7fd8af;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.metric-box {
+  background-color: #bbf2d8;
+  padding: 30px 10px;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+}
+
+.metric-number {
+  font-size: 32px;
+  font-weight: 900;
+  color: #135d40;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.metric-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #225540;
+  line-height: 1.3;
+}
+
+.metric-subtitle {
+  font-size: 11px;
+  color: #336650;
+  margin-top: 2px;
+}
+
+.light-text {
+  font-weight: normal;
+}
+
+@media (max-width: 900px) {
+  .history-container {
+    flex-direction: column;
+  }
+  .history-metrics-card {
+    width: 100%;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,138 @@
+<div class="pagina-usuarios">
+
+    <!-- Encabezado -->
+   <header class="encabezado">
+        <div>
+            <h1>Choza Punto Limón</h1>
+            <p>Sistema de gestión interna</p>
+        </div>
+
+        <!-- Nueva Tarjeta informativa del Usuario Logueado (Superior Derecha) -->
+        <div class="tarjeta-usuario-logueado" style="display: flex; align-items: center; background-color: #0b3154; color: white; padding: 8px 16px; border-radius: 8px; margin-left: auto; margin-right: 20px;">
+            <div class="avatar-icono" style="background-color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 10px;">
+                <!-- Icono representativo (Peón) -->
+                <span style="color: #0b3154; font-weight: bold;">♟</span>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: bold; font-size: 14px;">{{ usuarioCompleto }}</span>
+                <span style="font-size: 11px; color: #cbd5e1; text-transform: uppercase;">{{ rolLogueado }}</span>
+            </div>
+        </div>
+
+        <button type="button" class="btn-regresar" (click)="regresar()">
+            ← Regresar al menú principal
+        </button>
+    </header>
+
+    <h2 class="titulo-pagina">Gestión de Usuarios</h2>
+    <p class="descripcion">Administra los accesos y datos del personal del restaurante.</p>
+
+    <!-- Formulario -->
+    <section class="tarjeta">
+
+        <h3>Datos del usuario</h3>
+
+        <form (ngSubmit)="guardar()">
+
+            <div class="formulario-grid">
+
+                <div class="campo">
+                    <label>ID</label>
+                    <input type="text" name="idUsuario" [(ngModel)]="formulario.idUsuario" maxlength="8" required
+                        placeholder="Ingrese Id">
+                </div>
+
+                <div class="campo">
+                    <label>Nombres</label>
+                    <input type="text" name="nombres" [(ngModel)]="formulario.nombres" required
+                        placeholder="Ingrese nombres">
+                </div>
+
+                <div class="campo">
+                    <label>Apellidos</label>
+                    <input type="text" name="apellidos" [(ngModel)]="formulario.apellidos" required
+                        placeholder="Ingrese apellidos">
+                </div>
+
+                <div class="campo">
+                    <label>Contraseña</label>
+                    <input type="passworduser" name="passworduser" [(ngModel)]="formulario.passworduser" required
+                        placeholder="Ingrese contraseña">
+                </div>
+
+                <div class="campo">
+                    <label>Rol del usuario</label>
+                    <select name="rol" [(ngModel)]="formulario.rol">
+                        <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                        <option value="COCINERO">COCINERO</option>
+                        <option value="MESERO">MESERO</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="acciones-formulario">
+                <button type="submit" class="btn-registrar">Registrar</button>
+                <button type="button" class="btn-actualizar" (click)="actualizar()">Actualizar</button>
+                <button type="button" class="btn-limpiar" (click)="limpiar()">Limpiar</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Tabla de usuarios -->
+    <section class="tarjeta">
+
+        <div class="encabezado-tabla">
+            <div>
+                <h3>Usuarios registrados</h3>
+                <p>Consulta y administra el personal registrado.</p>
+            </div>
+
+            <input type="text" name="busqueda" [(ngModel)]="busqueda" placeholder="Buscar por DNI o nombre...">
+        </div>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let usuario of usuariosFiltrados">
+                        <td>{{ usuario.idUsuario }}</td>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.apellidos }}</td>
+                        
+                        <td>
+                            <span class="etiqueta-rol">{{ usuario.rol }}</span>
+                        </td>
+                        <td class="acciones-tabla">
+                            <button type="button" class="btn-editar" (click)="seleccionarUsuario(usuario)">
+                                Editar
+                            </button>
+
+                            <button type="button" class="btn-eliminar" (click)="eliminarUsuario(usuario)">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr *ngIf="usuariosFiltrados.length === 0">
+                        <td colspan="5" class="sin-registros">
+                            No hay usuarios registrados.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+</div>
